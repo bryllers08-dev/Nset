@@ -1,13 +1,12 @@
 [build]
-builder = "nixpacks"
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "python3.11 deriv_lstm_bot.py"
+startCommand = "python3 deriv_lstm_bot.py"
 restartPolicyType = "always"
 restartPolicyMaxRetries = 10
 
 # Set these in Railway dashboard -> your service -> Variables:
-#   DATA_DIR        = /app/data
+#   DATA_DIR        = /app/data        (mount your Volume here)
 #   DERIV_API_TOKEN = your_token_here
-#   PYTHONUNBUFFERED = 1
-#   TF_CPP_MIN_LOG_LEVEL = 2
