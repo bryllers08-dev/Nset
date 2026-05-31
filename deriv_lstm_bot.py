@@ -101,13 +101,13 @@ CONFIG = {
     "reselect_every": 3000,
 
     # -- Data collection ---------------------------------------------------
-    "collect_hours" : 2.0,
+    "collect_hours" : 3.0,
     "data_dir"      : os.path.join(DATA_DIR, "tick_data"),
     "min_ticks"     : 3000,
 
     # -- Walk-forward validation -------------------------------------------
     "wf_folds"      : 5,
-    "wf_oos_size"   : 500,
+    "wf_oos_size"   : 600,
 
     # -- Online scaler (live adaptation) ------------------------------------
     "scaler_window" : 10_000,
