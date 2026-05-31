@@ -107,7 +107,7 @@ CONFIG = {
 
     # -- Walk-forward validation -------------------------------------------
     "wf_folds"      : 5,
-    "wf_oos_size"   : 600,
+    "wf_oos_size"   : 500,
 
     # -- Online scaler (live adaptation) ------------------------------------
     "scaler_window" : 10_000,
