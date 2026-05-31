@@ -101,7 +101,7 @@ CONFIG = {
     "reselect_every": 3000,
 
     # -- Data collection ---------------------------------------------------
-    "collect_hours" : 1.45,
+    "collect_hours" : 2.0,
     "data_dir"      : os.path.join(DATA_DIR, "tick_data"),
     "min_ticks"     : 3000,
 
