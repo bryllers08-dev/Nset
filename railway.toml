@@ -2,18 +2,12 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "python deriv_lstm_bot.py"
+startCommand = "python3.11 deriv_lstm_bot.py"
 restartPolicyType = "always"
 restartPolicyMaxRetries = 10
 
-# ---------------------------------------------------------------------------
-# Environment variables
-# Set these in the Railway dashboard under your service -> Variables
-# ---------------------------------------------------------------------------
-# DATA_DIR          = /app/data        <- mount your Railway Volume here
-# DERIV_API_TOKEN   = your_token       <- your Deriv API token
-#
-# [environments.production.variables]
-# PYTHONUNBUFFERED = "1"
-# TF_CPP_MIN_LOG_LEVEL = "2"
-# DATA_DIR = "/app/data"
+# Set these in Railway dashboard -> your service -> Variables:
+#   DATA_DIR        = /app/data
+#   DERIV_API_TOKEN = your_token_here
+#   PYTHONUNBUFFERED = 1
+#   TF_CPP_MIN_LOG_LEVEL = 2

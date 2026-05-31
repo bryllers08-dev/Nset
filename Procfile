@@ -1,1 +1,1 @@
-worker: python deriv_lstm_bot.py
+worker: python3.11 deriv_lstm_bot.py

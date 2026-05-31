@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["python311", "gcc", "libstdcxx5"]
+nixPkgs = ["python311", "python311Packages.pip", "gcc", "libstdcxx5"]
 
 [phases.install]
 cmds = [
-  "pip install --upgrade pip",
-  "pip install -r requirements.txt"
+  "python3.11 -m pip install --upgrade pip",
+  "python3.11 -m pip install -r requirements.txt"
 ]
 
 [start]
-cmd = "python deriv_lstm_bot.py"
+cmd = "python3.11 deriv_lstm_bot.py"
