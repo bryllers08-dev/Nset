@@ -1,0 +1,14 @@
+# Data and model files (too large for git, persisted via Railway Volume)
+tick_data/
+*.csv
+lstm_model_v2/
+*.h5
+bot.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
