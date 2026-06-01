@@ -114,8 +114,8 @@ CONFIG = {
 
     # -- Model -------------------------------------------------------------
     "seq_len"       : 50,
-    "epochs"        : 80,
-    "batch_size"    : 64,
+    "epochs"        : 50,
+    "batch_size"    : 32,
     "learning_rate" : 0.001,
     "dropout"       : 0.3,
     "model_file"    : os.path.join(DATA_DIR, "lstm_model_v3"),
@@ -620,19 +620,19 @@ class DualHeadLSTM:
         inp = Input(shape=(self.seq_len, self.n_features), name="tick_seq")
 
         # -- Shared trunk --------------------------------------------------
-        x = LSTM(128, return_sequences=True,  name="lstm_1")(inp)
+        x = LSTM(64, return_sequences=True,  name="lstm_1")(inp)
         x = BatchNormalization()(x)
         x = Dropout(self.cfg["dropout"])(x)
 
-        x = LSTM(64,  return_sequences=True,  name="lstm_2")(x)
+        x = LSTM(32,  return_sequences=True,  name="lstm_2")(x)
         x = BatchNormalization()(x)
         x = Dropout(self.cfg["dropout"])(x)
 
-        x = LSTM(32,  return_sequences=False, name="lstm_3")(x)
+        x = LSTM(16,  return_sequences=False, name="lstm_3")(x)
         x = BatchNormalization()(x)
         x = Dropout(self.cfg["dropout"])(x)
 
-        shared = Dense(64, activation="relu", name="shared_dense")(x)
+        shared = Dense(32, activation="relu", name="shared_dense")(x)
         shared = Dropout(self.cfg["dropout"] / 2)(shared)
 
         # -- Head A — parity -----------------------------------------------
